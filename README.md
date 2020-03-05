@@ -5,13 +5,16 @@
 
 Today I show you how to do an Array or JSON array to HTML Table, with the column name automatically generated. Normally we need to check the column name of the table, then we code the html with the table header and fetch the body of the table with the column name.
 We have array like this:
+```php
 $list = array( array("title"=>"Tulip", "price"=>2.25 , "number"=>25),
 array("title"=>"Orchids", "price"=>1.50 , "number"=>35),
 array("title"=>"Snowdrop", "price"=>2.15 , "number"=>8)
 );
+```
 If you use JSON Array, we need to decode to Array first:
+```php
 json_decode($dataJSON);
-
+```
 
 We have 2 way to do:
 1. Generate table inside php code like after get from mySQL and show result.
