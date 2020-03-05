@@ -14,52 +14,54 @@ json_decode($dataJSON);
 
 
 We have 2 way to do:
-Generate table inside php code like after get from mySQL and show result.
-
+1. Generate table inside php code like after get from mySQL and show result.
+``` php
 if (count($list) > 0) {
 echo "<table border=1 cellspacing=0 cellpadding=2>
-<thead>
-<tr>
-<th>";
-echo implode('</th><th>', array_keys(current($list)));
-echo "
-</th>
-</tr>
-</thead>
-<tbody>";
-foreach ($list as $row) {
-array_map('htmlentities', $row);
-echo "
-<tr>
-<td>";
-echo implode('</td><td>', $row);
-echo 
-"</td>
-</tr>";
-}
-echo "
-</tbody>
+    <thead>
+      <tr>
+        <th>";
+          echo implode('</th><th>', array_keys(current($list)));
+          echo "
+        </th>
+      </tr>
+    </thead>
+    <tbody>";
+      foreach ($list as $row) {
+        array_map('htmlentities', $row);
+      echo "
+        <tr>
+          <td>";
+            echo implode('</td><td>', $row);
+            echo "
+          </td>
+        </tr>";
+      }
+      echo "
+    </tbody>
 </table>";
 }
+```
 
 
 2. Generate table inside html code.
+``` php
 <?php if (count($list) > 0): ?>
-<table border='1' cellspacing='0' cellpadding='2'>
-<thead>
-<tr>
-<th><?php echo implode('</th><th>', array_keys(current($list))); ?></th>
-</tr>
-</thead>
-<tbody>
-<?php foreach ($list as $row): array_map('htmlentities', $row); ?>
-<tr>
-<td><?php echo implode('</td><td>', $row); ?></td>
-</tr>
-<?php endforeach; ?>
-</tbody>
-</table>
-<?php endif; ?>
-
+  <table border='1' cellspacing='0' cellpadding='2'>
+    <thead>
+      <tr>
+        <th><?php echo implode('</th><th>', array_keys(current($list))); ?></th>
+      </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($list as $row): array_map('htmlentities', $row); ?>
+      <tr>
+        <td><?php echo implode('</td><td>', $row); ?></td>
+      </tr>
+    <?php endforeach; ?>
+    </tbody>
+  </table>
+  <?php endif; ?>
+```
 
 Well done! run and happy.
