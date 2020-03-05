@@ -1,7 +1,7 @@
-# arraytohtmltable
-Array or JSON array to HTML Table
-Convert array to HTML table
-PHP Array to HTML Table
+# Array to HTML table
+# Array or JSON array to HTML Table
+# Convert array to HTML table
+# PHP Array to HTML Table
 
 Today I show you how to do an Array or JSON array to HTML Table, with the column name automatically generated. Normally we need to check the column name of the table, then we code the html with the table header and fetch the body of the table with the column name.
 We have array like this:
